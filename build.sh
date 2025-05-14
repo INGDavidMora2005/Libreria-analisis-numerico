@@ -4,10 +4,13 @@ echo "==> Compilando clase Java y generando encabezado JNI..."
 javac -h . analisisNumerico.java
 
 echo "==> Compilando código en C con JNI..."
-gcc -fPIC -I"$JAVA_HOME/include" -I"$JAVA_HOME/include/linux" -c analisisNumerico.c -o analisisNumerico.o -lm
+gcc -c -fPIC -I/usr/lib/jvm/java-17-openjdk-amd64/include \
+            -I/usr/lib/jvm/java-17-openjdk-amd64/include/linux \
+            analisisNumerico.c tinyexpr.c
 
-echo "==> Generando biblioteca compartida..."
-gcc -shared -o libanalisisnumerico.so analisisNumerico.o -lm
+echo "==> Generando y enlazando biblioteca compartida con cJSON y tinyexpr..."
+gcc -shared -o libanalisisnumerico.so analisisNumerico.o tinyexpr.o -lcjson
 
 echo "✅ Biblioteca 'libanalisisnumerico.so' generada correctamente."
+
 

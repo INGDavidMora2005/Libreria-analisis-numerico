@@ -10,26 +10,26 @@ extern "C" {
 /*
  * Class:     analisisNumerico
  * Method:    puntoFijo
- * Signature: (DDI)D
+ * Signature: (DDILjava/lang/String;)D
  */
 JNIEXPORT jdouble JNICALL Java_analisisNumerico_puntoFijo
-  (JNIEnv *, jobject, jdouble, jdouble, jint);
+  (JNIEnv *, jobject, jdouble, jdouble, jint, jstring);
 
 /*
  * Class:     analisisNumerico
  * Method:    biseccion
- * Signature: (DDDI)D
+ * Signature: (DDDILjava/lang/String;)D
  */
 JNIEXPORT jdouble JNICALL Java_analisisNumerico_biseccion
-  (JNIEnv *, jobject, jdouble, jdouble, jdouble, jint);
+  (JNIEnv *, jobject, jdouble, jdouble, jdouble, jint, jstring);
 
 /*
  * Class:     analisisNumerico
  * Method:    newtonRaphson
- * Signature: (DDI)D
+ * Signature: (Ljava/lang/String;Ljava/lang/String;DDI)D
  */
 JNIEXPORT jdouble JNICALL Java_analisisNumerico_newtonRaphson
-  (JNIEnv *, jobject, jdouble, jdouble, jint);
+  (JNIEnv *, jobject, jstring, jstring, jdouble, jdouble, jint);
 
 #ifdef __cplusplus
 }
