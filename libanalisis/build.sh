@@ -12,5 +12,3 @@ echo "==> Generando y enlazando biblioteca compartida con cJSON y tinyexpr..."
 gcc -shared -o libanalisisnumerico.so analisisNumerico.o tinyexpr.o -lcjson
 
 echo "✅ Biblioteca 'libanalisisnumerico.so' generada correctamente."
-
-
