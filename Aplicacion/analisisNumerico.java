@@ -26,8 +26,14 @@ public class analisisNumerico {
             System.out.println("4. Salir");
             System.out.print("Opción: ");
             
-            int opcion = scanner.nextInt();
-            scanner.nextLine();
+            int opcion = 0;
+            if (scanner.hasNextInt()) {
+               opcion = scanner.nextInt();
+   	       scanner.nextLine();
+	   } else {
+    	       System.out.println("Entrada inválida. Use un número.");
+   	       continue;  // Vuelve al inicio del bucle
+	    }
             
             if (opcion == 4) {
                 System.out.println("¡Hasta luego!");
